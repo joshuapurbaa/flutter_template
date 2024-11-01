@@ -2,7 +2,7 @@ import 'package:fpdart/fpdart.dart';
 
 abstract interface class {{name.pascalCase()}}DbApi {
   Future<Unit> delete{{name.pascalCase()}}(String id);
-  Future<{{name.pascalCase()}}?> get{{name.pascalCase()}}ById(String id);
+  Future<{{name.pascalCase()}}?> get{{name.pascalCase()}}(String id);
   Future<List<{{name.pascalCase()}}>> getAll{{name.pascalCase()}}();
   Future<Unit> insert{{name.pascalCase()}}({{name.pascalCase()}} {{name.camelCase()}});
   Future<Unit> update{{name.pascalCase()}}({{name.pascalCase()}} {{name.camelCase()}});
@@ -36,10 +36,10 @@ class {{name.pascalCase()}}DbApiImpl implements {{name.pascalCase()}}DbApi {
   }
 
   @override
-  Future<{{name.pascalCase()}}?> get{{name.pascalCase()}}ById(String id) async {
+  Future<{{name.pascalCase()}}?> get{{name.pascalCase()}}(String id) async {
     try {
       await {{name.camelCase()}}Db.database;
-      final result = await {{name.camelCase()}}Db.get{{name.pascalCase()}}ById(id);
+      final result = await {{name.camelCase()}}Db.get{{name.pascalCase()}}(id);
 
       if (result != null) {
         return result;
