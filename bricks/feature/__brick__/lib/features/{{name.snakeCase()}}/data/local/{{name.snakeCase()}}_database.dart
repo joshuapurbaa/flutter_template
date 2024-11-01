@@ -38,12 +38,12 @@ class {{name.pascalCase()}}Db {
   }
 
   Future<void> insert{{name.pascalCase()}}(
-    {{name.pascalCase()}} financialCategory,
+    {{name.pascalCase()}} {{name.camelCase()}},
   ) async {
     final db = await database;
     await db.insert(
       '{{name.pascalCase()}}',
-      financialCategory.toMap(),
+      {{name.camelCase()}}.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
@@ -71,14 +71,14 @@ class {{name.pascalCase()}}Db {
   }
 
   Future<void> update{{name.pascalCase()}}(
-    {{name.pascalCase()}} financialCategory,
+    {{name.pascalCase()}} {{name.camelCase()}},
   ) async {
     final db = await database;
     await db.update(
       '{{name.pascalCase()}}',
-      financialCategory.toMap(),
+      {{name.camelCase()}}.toMap(),
       where: 'id = ?',
-      whereArgs: [financialCategory.id],
+      whereArgs: [{{name.camelCase()}}.id],
     );
   }
 
