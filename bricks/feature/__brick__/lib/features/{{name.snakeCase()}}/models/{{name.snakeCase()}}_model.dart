@@ -1,8 +1,8 @@
-class {{name.pascalCase}} {
-  {{name.pascalCase}}();
+class {{name.pascalCase()}} {
+  {{name.pascalCase()}}();
 
-  factory {{name.pascalCase}}.fromMap(Map<String, dynamic> map) {
-    return {{name.pascalCase}}();
+  factory {{name.pascalCase()}}.fromMap(Map<String, dynamic> map) {
+    return {{name.pascalCase()}}();
   }
 
   Map<String, dynamic> toMap() {
