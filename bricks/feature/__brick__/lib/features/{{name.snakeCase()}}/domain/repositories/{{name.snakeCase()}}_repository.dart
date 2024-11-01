@@ -2,7 +2,7 @@ import 'package:fpdart/fpdart.dart';
 
 abstract interface class {{name.pascalCase()}}Repository {
   Future<Either<Failure, Unit>> delete{{name.pascalCase()}}(String id);
-  Future<Either<Failure, {{name.pascalCase()}}?>> get{{name.pascalCase()}}ById(
+  Future<Either<Failure, {{name.pascalCase()}}?>> get{{name.pascalCase()}}(
     String id,
   );
   Future<Either<Failure, List<{{name.pascalCase()}}>>> getAll{{name.pascalCase()}}();
@@ -40,11 +40,11 @@ class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Reposi
   }
 
   @override
-  Future<Either<Failure, {{name.pascalCase()}}?>> get{{name.pascalCase()}}ById(
+  Future<Either<Failure, {{name.pascalCase()}}?>> get{{name.pascalCase()}}(
     String id,
   ) async {
     try {
-      final result = await api.get{{name.pascalCase()}}ById(id);
+      final result = await api.get{{name.pascalCase()}}(id);
 
       if (result != null) {
         return right(result);
